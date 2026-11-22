@@ -224,8 +224,6 @@ def find_best_property(entity_links: dict, relation_mentions: list[str],
         return best
     return None
 
----------------------------------------------------------------
-
 def _walk_chain(qid: str, chain: list[str], min_score: float, max_nodes: int) -> dict | None:
     nodes = [qid]
     hops = []
@@ -260,7 +258,7 @@ def find_best_path(entity_links: dict, relation_chain: list[str], min_score: flo
 
 
 def build_path_query(qid: str, hops: list[dict]) -> str:
-       patterns = []
+    patterns = []
     prev = f"wd:{qid}"
     for i, hop in enumerate(hops):
         nxt = "?x" if i == len(hops) - 1 else f"?n{i + 1}"

@@ -15,7 +15,7 @@ def _props(qid: str) -> list[dict]:
 
 
 def candidate_properties(entity_links: dict, relations: list[str], max_entities: int = 1, k: int = 5) -> list[dict]:
-    "
+    
     out, seen = [], set()
     for mention, cands in entity_links.items():
         for cand in cands[:max_entities]:

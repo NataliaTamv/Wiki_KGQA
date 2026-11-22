@@ -12,8 +12,7 @@ LLM_BASE_URL = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1")
 LLM_API_KEY = os.getenv("LLM_API_KEY", "ollama")
 LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5-coder:7b-instruct-q8_0")#llama3.1:8b-instruct-q8_0
 
-
-    "endp1": "https://backend.wikikgqa.skynet.coypu.org",   # διαγωνισμός
+ENDPOINTS = {"endp1": "https://backend.wikikgqa.skynet.coypu.org",  # διαγωνισμός
     "endp2": "http://155.207.113.40:7001",
 }
 DEFAULT_ENDPOINT_NAME = "endp1"
@@ -31,7 +30,7 @@ def resolve_endpoint(name_or_url: str) -> tuple[str, str]:
 
 
 def set_endpoint(name_or_url: str) -> str:
-     global ENDPOINT_NAME, WIKIKGQA_ENDPOINT, WIKIDATA_SPARQL_ENDPOINT
+    global ENDPOINT_NAME, WIKIKGQA_ENDPOINT, WIKIDATA_SPARQL_ENDPOINT
     ENDPOINT_NAME, WIKIKGQA_ENDPOINT = resolve_endpoint(name_or_url)
     WIKIDATA_SPARQL_ENDPOINT = WIKIKGQA_ENDPOINT
     return WIKIKGQA_ENDPOINT

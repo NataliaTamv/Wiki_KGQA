@@ -11,7 +11,8 @@ __pycache__/
 # μεγάλα αρχεία / παραγόμενα
 indexes/
 scratch/
-results/
+results/*
+!results/run_log.md
 data/cache/
 *.npy
 *.faiss
