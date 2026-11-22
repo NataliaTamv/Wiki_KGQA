@@ -1,0 +1,151 @@
+[
+  {
+    "question": "Who played Eleven in Stranger Things?",
+    "gold_answers": [
+      "Q25936414"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by population?",
+    "gold_answers": [
+      "Q1033"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by area?",
+    "gold_answers": [
+      "Q262"
+    ]
+  },
+  {
+    "question": "What is the capital of Ireland?",
+    "gold_answers": [
+      "Q1761"
+    ]
+  },
+  {
+    "question": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+    "gold_answers": [
+      "Q42"
+    ]
+  },
+  {
+    "question": "Is Stan Lee alive?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Is Stan Lee dead?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "When did Stan Lee die?",
+    "gold_answers": [
+      "2018-11-12T00:00:00Z"
+    ]
+  },
+  {
+    "question": "What age was Stan Lee when he died?",
+    "gold_answers": [
+      "95"
+    ]
+  },
+  {
+    "question": "What age is Stan Lee?",
+    "gold_answers": [
+      "103"
+    ]
+  },
+  {
+    "question": "What age would Stan Lee be if he were still alive?",
+    "gold_answers": [
+      "103"
+    ]
+  },
+  {
+    "question": "Who is the president of Poland?",
+    "gold_answers": [
+      "Q17704749"
+    ]
+  },
+  {
+    "question": "Does Poland have a president?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "Who is the head of state of Poland?",
+    "gold_answers": [
+      "Q17704749"
+    ]
+  },
+  {
+    "question": "How many Turing Awards have people from Austria won?",
+    "gold_answers": [
+      "0"
+    ]
+  },
+  {
+    "question": "Which countries have won a FIFA World Cup?",
+    "gold_answers": [
+      "Q142",
+      "Q145",
+      "Q155",
+      "Q183",
+      "Q29",
+      "Q38",
+      "Q414",
+      "Q77"
+    ]
+  },
+  {
+    "question": "Which countries have won a Cricket World Cup?",
+    "gold_answers": [
+      "Q11703",
+      "Q13353",
+      "Q145",
+      "Q244",
+      "Q25228",
+      "Q25305",
+      "Q26273",
+      "Q408",
+      "Q668",
+      "Q734",
+      "Q754",
+      "Q757",
+      "Q760",
+      "Q763",
+      "Q766",
+      "Q769",
+      "Q781",
+      "Q784",
+      "Q843",
+      "Q854"
+    ]
+  },
+  {
+    "question": "Which countries have won a Rugby World Cup?",
+    "gold_answers": [
+      "Q145",
+      "Q258",
+      "Q408",
+      "Q664"
+    ]
+  },
+  {
+    "question": "What is the population of Qatar?",
+    "gold_answers": [
+      "2639211.0"
+    ]
+  },
+  {
+    "question": "Who is the author of the manga One Piece?",
+    "gold_answers": [
+      "Q2010"
+    ]
+  }
+]

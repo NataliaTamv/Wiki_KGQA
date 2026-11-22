@@ -1,0 +1,50 @@
+[
+  {
+    "question": "Who played Eleven in Stranger Things?",
+    "gold_answers": [
+      "Q25936414"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by population?",
+    "gold_answers": [
+      "Q1033"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by area?",
+    "gold_answers": [
+      "Q262"
+    ]
+  },
+  {
+    "question": "What is the capital of Ireland?",
+    "gold_answers": [
+      "Q1761"
+    ]
+  },
+  {
+    "question": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+    "gold_answers": [
+      "Q42"
+    ]
+  },
+  {
+    "question": "Is Stan Lee alive?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Is Stan Lee dead?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "When did Stan Lee die?",
+    "gold_answers": [
+      "2018-11-12T00:00:00Z"
+    ]
+  }
+]

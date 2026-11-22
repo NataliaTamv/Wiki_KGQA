@@ -1,0 +1,701 @@
+[
+ {
+  "question": "What is the largest country in Africa by population?",
+  "gold_answers": [
+   "Q1033"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P131*/wdt:P17?/wdt:P30? wd:Q15 . ?sbj wdt:P1082 ?pop . MINUS { ?sbj wdt:P576 ?obj } } ORDER BY DESC(?pop) LIMIT 1"
+ },
+ {
+  "question": "What is the largest country in Africa by area?",
+  "gold_answers": [
+   "Q262"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P131*/wdt:P17?/wdt:P30? wd:Q15 . ?sbj wdt:P2046 ?area . MINUS { ?sbj wdt:P576 ?obj } } ORDER BY DESC(?area) LIMIT 1"
+ },
+ {
+  "question": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+  "gold_answers": [
+   "Q42"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q3107329 wdt:P50 ?obj }"
+ },
+ {
+  "question": "Which countries have won a FIFA World Cup?",
+  "gold_answers": [
+   "Q142",
+   "Q145",
+   "Q155",
+   "Q183",
+   "Q29",
+   "Q38",
+   "Q414",
+   "Q77"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?obj2 WHERE { ?sbj wdt:P3450 wd:Q19317 . ?sbj wdt:P3967?/wdt:P1346 ?obj1 . ?obj1 wdt:P17 ?obj2 . }"
+ },
+ {
+  "question": "Which countries have won a Cricket World Cup?",
+  "gold_answers": [
+   "Q11703",
+   "Q13353",
+   "Q145",
+   "Q244",
+   "Q25228",
+   "Q25305",
+   "Q26273",
+   "Q408",
+   "Q668",
+   "Q734",
+   "Q754",
+   "Q757",
+   "Q760",
+   "Q763",
+   "Q766",
+   "Q769",
+   "Q781",
+   "Q784",
+   "Q843",
+   "Q854"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?obj2 WHERE { ?sbj wdt:P3450 wd:Q192202 . ?sbj wdt:P3967?/wdt:P1346 ?obj1 . ?obj1 wdt:P17 ?obj2 . }"
+ },
+ {
+  "question": "Which countries have won a Rugby World Cup?",
+  "gold_answers": [
+   "Q145",
+   "Q258",
+   "Q408",
+   "Q664"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?obj2 WHERE { ?sbj wdt:P3450 wd:Q16640 . ?sbj wdt:P3967?/wdt:P1346 ?obj1 . ?obj1 wdt:P17 ?obj2 . }"
+ },
+ {
+  "question": "How many movies has Tarantino directed?",
+  "gold_answers": [
+   "Q18225084",
+   "Q928019",
+   "Q72962",
+   "Q571032",
+   "Q47300912",
+   "Q431252",
+   "Q192115",
+   "Q104123",
+   "Q18126825",
+   "Q165325",
+   "Q153723",
+   "Q1137372",
+   "Q1137310",
+   "Q679023",
+   "Q137212522",
+   "Q117190377",
+   "Q1480733",
+   "Q122231483"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P57 wd:Q3772 . ?sbj wdt:P31/wdt:P279* wd:Q11424 }"
+ },
+ {
+  "question": "Is Leonardo DiCaprio older than Joaquin Phoenix?",
+  "gold_answers": [
+   "False"
+  ],
+  "gold_sparql": "ASK WHERE { wd:Q38111 wdt:P569 ?value1 . wd:Q185140 wdt:P569 ?value2 . FILTER ( ?value1 < ?value2 ) }"
+ },
+ {
+  "question": "In which country is the Museo del Prado located?",
+  "gold_answers": [
+   "Q29"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q160112 wdt:P17 ?obj . }"
+ },
+ {
+  "question": "Which paintings feature a banana?",
+  "gold_answers": [
+   "Q99855137",
+   "Q102192205",
+   "Q76997874",
+   "Q61444184",
+   "Q548141",
+   "Q49252391",
+   "Q47688755",
+   "Q3204088",
+   "Q26838163",
+   "Q20198024",
+   "Q19924778",
+   "Q18918134",
+   "Q17494397",
+   "Q17493299",
+   "Q17492929",
+   "Q136304388",
+   "Q135874124"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P180 wd:Q503 . ?sbj wdt:P31/wdt:P279* wd:Q3305213 }"
+ },
+ {
+  "question": "When did Ian Curtis commit suicide?",
+  "gold_answers": [
+   "1980-05-18T00:00:00Z"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q207867 wdt:P570 ?obj }"
+ },
+ {
+  "question": "In which movies did Al Pacino and Robert de Niro appear together?",
+  "gold_answers": [
+   "Q184768",
+   "Q29057443",
+   "Q42198",
+   "Q4243278",
+   "Q477624",
+   "Q1550654",
+   "Q77852299",
+   "Q1196157"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P161 wd:Q41163 . ?sbj wdt:P161 wd:Q36949 . ?sbj wdt:P31/wdt:P279* wd:Q11424 }"
+ },
+ {
+  "question": "Who is the youngest head of state in the world?",
+  "gold_answers": [
+   "Q113989189"
+  ],
+  "gold_sparql": "SELECT ?obj1 WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P35 ?obj1 . ?obj1 wdt:P569 ?obj2 . FILTER(!isBlank(?obj2)) } ORDER BY DESC(?obj2) LIMIT 1"
+ },
+ {
+  "question": "How many astronauts studied at MIT?",
+  "gold_answers": [
+   "49"
+  ],
+  "gold_sparql": "SELECT (COUNT(?sbj) AS ?count) WHERE { ?sbj wdt:P69 wd:Q49108 . ?sbj wdt:P106 wd:Q11631 }"
+ },
+ {
+  "question": "When was the first exoplanet discovered?",
+  "gold_answers": [
+   "1991-01-01T00:00:00Z"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q44559 . ?sbj wdt:P575 ?obj } ORDER BY ?obj LIMIT 1"
+ },
+ {
+  "question": "What buildings are named after JFK?",
+  "gold_answers": [
+   "Q6232375",
+   "Q134462120",
+   "Q2900611",
+   "Q6232341",
+   "Q48821",
+   "Q125537532",
+   "Q3373041",
+   "Q134769936",
+   "Q125537532",
+   "Q1631981",
+   "Q125537532",
+   "Q105229531",
+   "Q77418352",
+   "Q6232341",
+   "Q8685",
+   "Q8685"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P138 wd:Q9696 . ?sbj wdt:P31/wdt:P279* wd:Q41176 . }"
+ },
+ {
+  "question": "Which countries currently have multiple capitals?",
+  "gold_answers": [
+   "Q1050",
+   "Q219060",
+   "Q236",
+   "Q258",
+   "Q710",
+   "Q750",
+   "Q805",
+   "Q854"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P36 ?obj1 . ?sbj wdt:P31/wdt:P279* wd:Q3624078 . MINUS { ?sbj wdt:P582|wdt:P576 ?obj2 } } GROUP BY ?sbj HAVING(COUNT(DISTINCT ?obj1) >= 2)"
+ },
+ {
+  "question": "Which video games are known to be NP-complete?",
+  "gold_answers": [
+   "Q126194",
+   "Q17286",
+   "Q2120242",
+   "Q212785",
+   "Q240004",
+   "Q3319319",
+   "Q4050885",
+   "Q477458",
+   "Q71910",
+   "Q835894"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj { ?sbj wdt:P31/wdt:P279* wd:Q7889 . ?sbj wdt:P31?/wdt:P10374 wd:Q215206 . }"
+ },
+ {
+  "question": "Which countries are named after plants?",
+  "gold_answers": [
+   "Q155"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P138 ?obj . ?obj (wdt:P31/wdt:P279*)|(wdt:P171+) wd:Q756 . }"
+ },
+ {
+  "question": "What is the Twitter account of Elon Musk?",
+  "gold_answers": [
+   "elonmusk"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q317521 wdt:P2002 ?obj }"
+ },
+ {
+  "question": "Which alkali metals are in period 4?",
+  "gold_answers": [
+   "Q703"
+  ],
+  "gold_sparql": "SELECT ?subj WHERE { ?subj wdt:P279+ wd:Q19557 . ?subj wdt:P361 wd:Q239825 }"
+ },
+ {
+  "question": "Where are platypuses endemic?",
+  "gold_answers": [
+   "Q408"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q15343 wdt:P183 ?obj }"
+ },
+ {
+  "question": "Which species endemic to Chile are endangered?",
+  "gold_answers": [
+   "Q1333877",
+   "Q247316",
+   "Q2840196",
+   "Q303087",
+   "Q304494",
+   "Q307272",
+   "Q3764305",
+   "Q4881246",
+   "Q631167",
+   "Q834053"
+  ],
+  "gold_sparql": "SELECT ?subj WHERE { ?subj wdt:P141 wd:Q96377276 . ?subj wdt:P183 wd:Q298 }"
+ },
+ {
+  "question": "What country has the most nuclear power plants?",
+  "gold_answers": [
+   "Q30"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { ?subj wdt:P31/wdt:P279* wd:Q134447 . ?subj wdt:P17 ?obj . } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1"
+ },
+ {
+  "question": "Which country has the most official languages?",
+  "gold_answers": [
+   "Q865"
+  ],
+  "gold_sparql": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3624078 . ?subj wdt:P37 ?obj } GROUP BY ?subj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1"
+ },
+ {
+  "question": "When did ICLR start?",
+  "gold_answers": [
+   "2013-01-01T00:00:00Z"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q30108190 wdt:P571 ?obj }"
+ },
+ {
+  "question": "Which countries that do not border Germany have German as an official language?",
+  "gold_answers": [
+   "Q12548",
+   "Q183",
+   "Q27304761",
+   "Q347",
+   "Q551375",
+   "Q877579"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P37 wd:Q188 . MINUS { wd:Q183 wdt:P47 ?sbj } MINUS { ?sbj wdt:P31/wdt:P279* wd:Q3024240 } }"
+ },
+ {
+  "question": "What is the nearest black hole to Earth?",
+  "gold_answers": [
+   "Q237284"
+  ],
+  "gold_sparql": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q589 . ?subj p:P2583/psn:P2583/wikibase:quantityAmount ?obj } ORDER BY ?obj LIMIT 1"
+ },
+ {
+  "question": "Which conferences focus on Machine Learning?",
+  "gold_answers": [
+   "Q123908455",
+   "Q16950911",
+   "Q17087718",
+   "Q1961016",
+   "Q2992422",
+   "Q30108190",
+   "Q56289836",
+   "Q62657831",
+   "Q66305862"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q47258130 . ?subj wdt:P921/(wdt:P1269|wdt:P279)* wd:Q2539 . }"
+ },
+ {
+  "question": "Which cities are named after an apostle?",
+  "gold_answers": [
+   "Q1016047",
+   "Q169943",
+   "Q174",
+   "Q174262",
+   "Q187831",
+   "Q191652",
+   "Q2031463",
+   "Q2540118",
+   "Q28848",
+   "Q2887",
+   "Q3471566",
+   "Q3932",
+   "Q42763",
+   "Q430313",
+   "Q488379",
+   "Q656",
+   "Q75933"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q515 . ?sbj wdt:P138 ?obj . ?obj (wdt:P39|wdt:P31|wdt:P106|wdt:P411)?/wdt:P279* wd:Q43412 }"
+ },
+ {
+  "question": "What chocolate bars are made by Nestlé?",
+  "gold_answers": [
+   "Q116601648",
+   "Q1204628",
+   "Q12063757",
+   "Q1827229",
+   "Q2005613",
+   "Q2600165",
+   "Q2981822",
+   "Q2989610",
+   "Q367251",
+   "Q4906619",
+   "Q5042737",
+   "Q5185997",
+   "Q7166421",
+   "Q7225840",
+   "Q8055639"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31*/wdt:P279* wd:Q1361086 . ?sbj wdt:P176|wdt:P127 wd:Q160746 . }"
+ },
+ {
+  "question": "Who was the US president before Richard Nixon?",
+  "gold_answers": [
+   "Q9640"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?obj2 WHERE { wd:Q9588 p:P39 ?obj . ?obj ps:P39 wd:Q11696 . ?obj pq:P1365 ?obj2 . }"
+ },
+ {
+  "question": "How many books are in The Hitchhiker's Guide to the Galaxy series?",
+  "gold_answers": [
+   "5"
+  ],
+  "gold_sparql": "SELECT (COUNT(DISTINCT ?obj) AS ?count) WHERE { wd:Q25169 wdt:P527 ?obj  }"
+ },
+ {
+  "question": "Which Simpsons characters were not born in Springfield?",
+  "gold_answers": [
+   "Q10381019",
+   "Q1789068",
+   "Q2704414",
+   "Q324430"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279 wd:Q95074 . ?sbj wdt:P1080 wd:Q61468436 . ?sbj wdt:P19 ?obj . FILTER(?obj != wd:Q151076)  }"
+ },
+ {
+  "question": "When was sparkling water invented?",
+  "gold_answers": [
+   "1767-01-01T00:00:00Z"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q264554 wdt:P575 ?obj  }"
+ },
+ {
+  "question": "Who is the tallest professional basketball player of all time?",
+  "gold_answers": [
+   "Q940503"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P106 wd:Q3665646 . ?sbj p:P2048/psn:P2048/wikibase:quantityAmount ?obj . } ORDER BY DESC(?obj) LIMIT 1"
+ },
+ {
+  "question": "Is Justin Bieber alive?",
+  "gold_answers": [
+   "True"
+  ],
+  "gold_sparql": "ASK WHERE { FILTER NOT EXISTS { wd:Q34086 wdt:P570 ?obj2 } }"
+ },
+ {
+  "question": "Is Michael Jackson the oldest child?",
+  "gold_answers": [
+   "False"
+  ],
+  "gold_sparql": "ASK WHERE { FILTER NOT EXISTS { wd:Q2831 wdt:P569 ?obj2 . wd:Q2831 wdt:P3373 ?obj3 . ?obj3 wdt:P569 ?obj4 . FILTER(?obj2 > ?obj4) } }"
+ },
+ {
+  "question": "Which element precedes tin in the periodic table?",
+  "gold_answers": [
+   "Q1094"
+  ],
+  "gold_sparql": "SELECT ?obj2 WHERE { wd:Q1096 p:P31 ?obj1 . ?obj1 pq:P155 ?obj2 . ?obj1 ps:P31 wd:Q11344 . }"
+ },
+ {
+  "question": "Which language is the official language of the most countries?",
+  "gold_answers": [
+   "Q1860"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3624078 . ?sbj wdt:P37 ?obj } GROUP BY ?obj ORDER BY DESC(COUNT(?sbj)) LIMIT 1"
+ },
+ {
+  "question": "Which honorary mayors were not human?",
+  "gold_answers": [
+   "Q123904907",
+   "Q16844922",
+   "Q19810594",
+   "Q7627362"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P39/wdt:P31*/wdt:P279* wd:Q30185 . ?sbj wdt:P31/wdt:P279* wd:Q729 . MINUS { ?sbj wdt:P31/wdt:P279* wd:Q5 . } }"
+ },
+ {
+  "question": "Which polygonal numbers are also pronic?",
+  "gold_answers": [
+   "Q1066089",
+   "Q1095904",
+   "Q1492447",
+   "Q19260207",
+   "Q23488",
+   "Q36977",
+   "Q3844595",
+   "Q42817",
+   "Q646181",
+   "Q667957",
+   "Q812996",
+   "Q851628"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q836270 . ?sbj wdt:P31/wdt:P279* wd:Q1486643 . }"
+ },
+ {
+  "question": "What's the next prime after 51?",
+  "gold_answers": [
+   "Q593011"
+  ],
+  "gold_sparql": "SELECT ?obj2 WHERE { wd:Q712808 p:P31 ?obj1 . ?obj1 pq:P156 ?obj2 . ?obj1 ps:P31 wd:Q49008 }"
+ },
+ {
+  "question": "What animal can hear the highest frequency?",
+  "gold_answers": [
+   "Q761648"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj p:P3465/psn:P3465/wikibase:quantityAmount ?obj } ORDER BY DESC(?obj) LIMIT 1"
+ },
+ {
+  "question": "Who has won more than one type of Nobel Prize?",
+  "gold_answers": [
+   "Q48983",
+   "Q7186"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P166 ?obj . ?obj wdt:P31*/wdt:P279* wd:Q7191 } GROUP BY ?sbj HAVING(COUNT(DISTINCT(?obj))>1)"
+ },
+ {
+  "question": "Which city has the most cathedrals?",
+  "gold_answers": [
+   "Q90"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q2977 . ?sbj wdt:P276?/wdt:P131* ?obj . ?obj wdt:P31/wdt:P279* wd:Q515 . } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?sbj)) LIMIT 1"
+ },
+ {
+  "question": "What make of car is a Corolla?",
+  "gold_answers": [
+   "Q10874595",
+   "Q53268"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { wd:Q243543 wdt:P176 ?obj }"
+ },
+ {
+  "question": "Which U.S. president had the most spouses?",
+  "gold_answers": [
+   "Q22686"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj p:P26 ?obj . ?sbj wdt:P39 wd:Q11696 . } GROUP BY ?sbj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1"
+ },
+ {
+  "question": "Which conferences were organized by Turing Award winners?",
+  "gold_answers": [
+   "Q104243738",
+   "Q28053046",
+   "Q48026033",
+   "Q50355797",
+   "Q76721357",
+   "Q86968250"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q2020153 . ?sbj wdt:P664 ?obj . ?obj wdt:P166 wd:Q185667 }"
+ },
+ {
+  "question": "What video games are made by the developer of League of Legends?",
+  "gold_answers": [
+   "Q124635973",
+   "Q126480867",
+   "Q126481340",
+   "Q126481821",
+   "Q126482050",
+   "Q131438072",
+   "Q223341",
+   "Q2998270",
+   "Q3008213",
+   "Q67650639",
+   "Q72716423",
+   "Q75230763",
+   "Q86919275"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q7889 . ?sbj wdt:P178 ?obj . wd:Q223341 wdt:P178 ?obj . }"
+ },
+ {
+  "question": "Which writers speak French, Arabic and Japanese?",
+  "gold_answers": [
+   "Q107252323",
+   "Q16117958",
+   "Q170515",
+   "Q3057567",
+   "Q3124234",
+   "Q356719",
+   "Q472147",
+   "Q546374",
+   "Q55963"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P106 wd:Q36180 . ?sbj wdt:P1412 wd:Q150 . ?sbj wdt:P1412 wd:Q13955 . ?sbj wdt:P1412 wd:Q5287 . }"
+ },
+ {
+  "question": "What whisky distilleries are based in Ireland?",
+  "gold_answers": [
+   "Q113799362",
+   "Q123154491",
+   "Q1867525",
+   "Q2482",
+   "Q28231971",
+   "Q28408323",
+   "Q28450922",
+   "Q3312688",
+   "Q502578",
+   "Q735484",
+   "Q85797673"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P271* wd:Q10373548 . ?sbj wdt:P17 wd:Q27 }"
+ },
+ {
+  "question": "How many regions of France are there?",
+  "gold_answers": [
+   "39"
+  ],
+  "gold_sparql": "SELECT (COUNT(?sbj) AS ?count) WHERE { ?sbj wdt:P31 wd:Q36784 . }"
+ },
+ {
+  "question": "Which living people have an element named after them?",
+  "gold_answers": [
+   "Q1144326"
+  ],
+  "gold_sparql": "SELECT ?obj WHERE { ?sbj wdt:P31*/wdt:P276* wd:Q11344 . ?sbj wdt:P138 ?obj . ?obj wdt:P31 wd:Q5 . MINUS { ?obj wdt:P570 ?obj2 } }"
+ },
+ {
+  "question": "Which Chilean companies have U.S. parent companies?",
+  "gold_answers": [
+   "Q1061176",
+   "Q132012721",
+   "Q16571026",
+   "Q3052066",
+   "Q4651363",
+   "Q5283104",
+   "Q55454561",
+   "Q55964511",
+   "Q69523460"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279*/wdt:P460? wd:Q4830453 . ?sbj wdt:P17 wd:Q298 . ?sbj wdt:P749 ?obj . ?obj wdt:P17 wd:Q30 . }"
+ },
+ {
+  "question": "Did Tarantino direct a movie last year?",
+  "gold_answers": [
+   "True"
+  ],
+  "gold_sparql": "ASK WHERE { ?sbj wdt:P57 wd:Q3772 . ?sbj wdt:P577 ?obj . ?sbj wdt:P31/wdt:P279* wd:Q11424 . FILTER(YEAR(?obj)=(YEAR(NOW())-1)) }"
+ },
+ {
+  "question": "Which movie of the last ten years has won the most Academy Awards?",
+  "gold_answers": [
+   "Q20856802"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { { SELECT ?sbj (MIN(?obj) AS ?obj1) WHERE { ?sbj wdt:P31/wdt:P279* wd:Q11424 . ?sbj wdt:P577 ?obj . } GROUP BY ?sbj } ?sbj wdt:P166 ?obj2 . ?obj2 wdt:P31/wdt:P279* wd:Q19020 . FILTER(YEAR(NOW())-YEAR(?obj1)-IF(MONTH(NOW())>MONTH(?obj1),0,IF(MONTH(NOW())=MONTH(?obj1) && DAY(NOW())>=DAY(?obj1),0,1))< 10) } GROUP BY (?sbj) ORDER BY DESC(COUNT(DISTINCT ?obj2)) LIMIT 1"
+ },
+ {
+  "question": "Who was the winner of the latest Fields Medal?",
+  "gold_answers": [
+   "Q15461028",
+   "Q19655060",
+   "Q23721911",
+   "Q32538394"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { { SELECT (MAX(?date) AS ?recent) { ?sbj p:P166 ?obj . ?obj ps:P166 wd:Q28835 . ?obj pq:P585 ?date . } } ?sbj p:P166 ?obj . ?obj ps:P166 wd:Q28835 . ?obj pq:P585 ?recent . }"
+ },
+ {
+  "question": "Which YouTube channels talk about math?",
+  "gold_answers": [
+   "Q115556726",
+   "Q47490713",
+   "Q55100562",
+   "Q55345122",
+   "Q66565938"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31*/wdt:P279* wd:Q17558136 . ?sbj wdt:P921/wdt:P279* wd:Q395 . }"
+ },
+ {
+  "question": "What diseases are associated with the gene FGF14?",
+  "gold_answers": [
+   "Q1519482",
+   "Q21097867",
+   "Q61335"
+  ],
+  "gold_sparql": "SELECT ?sbj WHERE { ?sbj wdt:P2293 wd:Q17928040 }"
+ },
+ {
+  "question": "What ultra-cool dwarfs have been found in the constellation Aquarius?",
+  "gold_answers": [
+   "Q23986556"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q24039974 . ?sbj wdt:P59 wd:Q10576 . }"
+ },
+ {
+  "question": "Which movies directed by Chloé Zhao are not MPAA-rated R?",
+  "gold_answers": [
+   "Q122741016",
+   "Q19057475",
+   "Q23894629"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj { ?sbj wdt:P31/wdt:P276* wd:Q11424 . ?sbj wdt:P57 wd:Q21078321 . MINUS { ?sbj wdt:P1657 wd:Q18665344 } }"
+ },
+ {
+  "question": "Who is the Hindu deity of knowledge?",
+  "gold_answers": [
+   "Q58838"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q178885 . ?sbj wdt:P31*/wdt:P279*/wdt:P2925 wd:Q9081 . ?sbj wdt:P1049 wd:Q9089 . }"
+ },
+ {
+  "question": "Which science fiction movies star Uma Thurman?",
+  "gold_answers": [
+   "Q107896563",
+   "Q247516",
+   "Q276523",
+   "Q491800",
+   "Q494985"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P136 wd:Q471839 . ?sbj wdt:P161 wd:Q125017 . ?sbj wdt:P276*/wdt:P31 wd:Q11424 }"
+ },
+ {
+  "question": "Which relational database management systems are open source?",
+  "gold_answers": [
+   "Q192490",
+   "Q19646047",
+   "Q261744",
+   "Q30100408",
+   "Q30100559",
+   "Q4778914",
+   "Q5627844",
+   "Q56375088",
+   "Q60463",
+   "Q669257",
+   "Q6898976",
+   "Q787177",
+   "Q7935239",
+   "Q8039438",
+   "Q850",
+   "Q97187861"
+  ],
+  "gold_sparql": "SELECT DISTINCT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q3932296 . ?sbj wdt:P31/wdt:P279* wd:Q1130645 . }"
+ }
+]

@@ -1,0 +1,23 @@
+# virtualenvs
+.env/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# μυστικά
+.env.local
+
+# μεγάλα αρχεία / παραγόμενα
+indexes/
+scratch/
+results/
+data/cache/
+*.npy
+*.faiss
+*.sqlite
+*.tsv
+
+# editor
+.vscode/
+.idea/

@@ -1,0 +1,850 @@
+[
+  {
+    "question": "Who played Eleven in Stranger Things?",
+    "gold_answers": [
+      "Q25936414"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by population?",
+    "gold_answers": [
+      "Q1033"
+    ]
+  },
+  {
+    "question": "What is the largest country in Africa by area?",
+    "gold_answers": [
+      "Q262"
+    ]
+  },
+  {
+    "question": "What is the capital of Ireland?",
+    "gold_answers": [
+      "Q1761"
+    ]
+  },
+  {
+    "question": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+    "gold_answers": [
+      "Q42"
+    ]
+  },
+  {
+    "question": "Is Stan Lee alive?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Is Stan Lee dead?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "When did Stan Lee die?",
+    "gold_answers": [
+      "2018-11-12T00:00:00Z"
+    ]
+  },
+  {
+    "question": "What age was Stan Lee when he died?",
+    "gold_answers": [
+      "95"
+    ]
+  },
+  {
+    "question": "What age is Stan Lee?",
+    "gold_answers": [
+      "103"
+    ]
+  },
+  {
+    "question": "What age would Stan Lee be if he were still alive?",
+    "gold_answers": [
+      "103"
+    ]
+  },
+  {
+    "question": "Who is the president of Poland?",
+    "gold_answers": [
+      "Q17704749"
+    ]
+  },
+  {
+    "question": "Does Poland have a president?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "Who is the head of state of Poland?",
+    "gold_answers": [
+      "Q17704749"
+    ]
+  },
+  {
+    "question": "How many Turing Awards have people from Austria won?",
+    "gold_answers": [
+      "0"
+    ]
+  },
+  {
+    "question": "Which countries have won a FIFA World Cup?",
+    "gold_answers": [
+      "Q142",
+      "Q145",
+      "Q155",
+      "Q183",
+      "Q29",
+      "Q38",
+      "Q414",
+      "Q77"
+    ]
+  },
+  {
+    "question": "Which countries have won a Cricket World Cup?",
+    "gold_answers": [
+      "Q11703",
+      "Q13353",
+      "Q145",
+      "Q244",
+      "Q25228",
+      "Q25305",
+      "Q26273",
+      "Q408",
+      "Q668",
+      "Q734",
+      "Q754",
+      "Q757",
+      "Q760",
+      "Q763",
+      "Q766",
+      "Q769",
+      "Q781",
+      "Q784",
+      "Q843",
+      "Q854"
+    ]
+  },
+  {
+    "question": "Which countries have won a Rugby World Cup?",
+    "gold_answers": [
+      "Q145",
+      "Q258",
+      "Q408",
+      "Q664"
+    ]
+  },
+  {
+    "question": "What is the population of Qatar?",
+    "gold_answers": [
+      "2639211.0"
+    ]
+  },
+  {
+    "question": "Who is the author of the manga One Piece?",
+    "gold_answers": [
+      "Q2010"
+    ]
+  },
+  {
+    "question": "How many movies has Tarantino directed?",
+    "gold_answers": [
+      "Q18225084",
+      "Q928019",
+      "Q72962",
+      "Q571032",
+      "Q47300912",
+      "Q431252",
+      "Q192115",
+      "Q104123",
+      "Q18126825",
+      "Q165325",
+      "Q153723",
+      "Q1137372",
+      "Q1137310",
+      "Q679023",
+      "Q137212522",
+      "Q117190377",
+      "Q1480733",
+      "Q122231483"
+    ]
+  },
+  {
+    "question": "Is New York bigger than Beijing in terms of population?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Is New York bigger than Beijing in terms of area?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Is Leonardo DiCaprio older than Joaquin Phoenix?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "In which country is the Museo del Prado located?",
+    "gold_answers": [
+      "Q29"
+    ]
+  },
+  {
+    "question": "When did Caesars Palace open?",
+    "gold_answers": [
+      "1966-08-05T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Which political parties was Abraham Lincoln a member of?",
+    "gold_answers": [
+      "Q29468",
+      "Q42183",
+      "Q80719"
+    ]
+  },
+  {
+    "question": "Which paintings feature a banana?",
+    "gold_answers": [
+      "Q99855137",
+      "Q102192205",
+      "Q76997874",
+      "Q61444184",
+      "Q548141",
+      "Q49252391",
+      "Q47688755",
+      "Q3204088",
+      "Q26838163",
+      "Q20198024",
+      "Q19924778",
+      "Q18918134",
+      "Q17494397",
+      "Q17493299",
+      "Q17492929",
+      "Q136304388",
+      "Q135874124"
+    ]
+  },
+  {
+    "question": "Do any national flags use pink?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "When did Ian Curtis commit suicide?",
+    "gold_answers": [
+      "1980-05-18T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Did Ian Curtis commit suicide?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "When did Ian Curtis die?",
+    "gold_answers": [
+      "1980-05-18T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Is Ian Curtis dead?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "In which movies did Al Pacino and Robert de Niro appear together?",
+    "gold_answers": [
+      "Q184768",
+      "Q29057443",
+      "Q42198",
+      "Q4243278",
+      "Q477624",
+      "Q1550654",
+      "Q77852299",
+      "Q1196157"
+    ]
+  },
+  {
+    "question": "Who is the youngest head of state in the world?",
+    "gold_answers": [
+      "Q113989189"
+    ]
+  },
+  {
+    "question": "How many astronauts studied at MIT?",
+    "gold_answers": [
+      "49"
+    ]
+  },
+  {
+    "question": "When was the first exoplanet discovered?",
+    "gold_answers": [
+      "1991-01-01T00:00:00Z"
+    ]
+  },
+  {
+    "question": "What buildings are named after JFK?",
+    "gold_answers": [
+      "Q6232375",
+      "Q134462120",
+      "Q2900611",
+      "Q6232341",
+      "Q48821",
+      "Q125537532",
+      "Q3373041",
+      "Q134769936",
+      "Q125537532",
+      "Q1631981",
+      "Q125537532",
+      "Q105229531",
+      "Q77418352",
+      "Q6232341",
+      "Q8685",
+      "Q8685"
+    ]
+  },
+  {
+    "question": "When was Hey Jude released?",
+    "gold_answers": [
+      "1968-01-01T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Which countries currently have multiple capitals?",
+    "gold_answers": [
+      "Q1050",
+      "Q219060",
+      "Q236",
+      "Q258",
+      "Q710",
+      "Q750",
+      "Q805",
+      "Q854"
+    ]
+  },
+  {
+    "question": "Which video games are known to be NP-complete?",
+    "gold_answers": [
+      "Q126194",
+      "Q17286",
+      "Q2120242",
+      "Q212785",
+      "Q240004",
+      "Q3319319",
+      "Q4050885",
+      "Q477458",
+      "Q71910",
+      "Q835894"
+    ]
+  },
+  {
+    "question": "Which countries are named after plants?",
+    "gold_answers": [
+      "Q155"
+    ]
+  },
+  {
+    "question": "What is the chemical symbol for Potassium?",
+    "gold_answers": [
+      "K"
+    ]
+  },
+  {
+    "question": "What is the Twitter account of Elon Musk?",
+    "gold_answers": [
+      "elonmusk"
+    ]
+  },
+  {
+    "question": "Which alkali metals are in period 4?",
+    "gold_answers": [
+      "Q703"
+    ]
+  },
+  {
+    "question": "Where are platypuses endemic?",
+    "gold_answers": [
+      "Q408"
+    ]
+  },
+  {
+    "question": "Which species endemic to Chile are endangered?",
+    "gold_answers": [
+      "Q1333877",
+      "Q247316",
+      "Q2840196",
+      "Q303087",
+      "Q304494",
+      "Q307272",
+      "Q3764305",
+      "Q4881246",
+      "Q631167",
+      "Q834053"
+    ]
+  },
+  {
+    "question": "What country has the most nuclear power plants?",
+    "gold_answers": [
+      "Q30"
+    ]
+  },
+  {
+    "question": "Which country has the most official languages?",
+    "gold_answers": [
+      "Q865"
+    ]
+  },
+  {
+    "question": "When did ICLR start?",
+    "gold_answers": [
+      "2013-01-01T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Which countries that do not border Germany have German as an official language?",
+    "gold_answers": [
+      "Q12548",
+      "Q183",
+      "Q27304761",
+      "Q347",
+      "Q551375",
+      "Q877579"
+    ]
+  },
+  {
+    "question": "What is the national anthem of Greece?",
+    "gold_answers": [
+      "Q176665"
+    ]
+  },
+  {
+    "question": "Which company makes Twix?",
+    "gold_answers": [
+      "Q695087"
+    ]
+  },
+  {
+    "question": "What is the nearest black hole to Earth?",
+    "gold_answers": [
+      "Q237284"
+    ]
+  },
+  {
+    "question": "Which conferences focus on Machine Learning?",
+    "gold_answers": [
+      "Q123908455",
+      "Q16950911",
+      "Q17087718",
+      "Q1961016",
+      "Q2992422",
+      "Q30108190",
+      "Q56289836",
+      "Q62657831",
+      "Q66305862"
+    ]
+  },
+  {
+    "question": "Which cities are named after an apostle?",
+    "gold_answers": [
+      "Q1016047",
+      "Q169943",
+      "Q174",
+      "Q174262",
+      "Q187831",
+      "Q191652",
+      "Q2031463",
+      "Q2540118",
+      "Q28848",
+      "Q2887",
+      "Q3471566",
+      "Q3932",
+      "Q42763",
+      "Q430313",
+      "Q488379",
+      "Q656",
+      "Q75933"
+    ]
+  },
+  {
+    "question": "What chocolate bars are made by Nestlé?",
+    "gold_answers": [
+      "Q116601648",
+      "Q1204628",
+      "Q12063757",
+      "Q1827229",
+      "Q2005613",
+      "Q2600165",
+      "Q2981822",
+      "Q2989610",
+      "Q367251",
+      "Q4906619",
+      "Q5042737",
+      "Q5185997",
+      "Q7166421",
+      "Q7225840",
+      "Q8055639"
+    ]
+  },
+  {
+    "question": "Who was the US president before Richard Nixon?",
+    "gold_answers": [
+      "Q9640"
+    ]
+  },
+  {
+    "question": "How many books are in The Hitchhiker's Guide to the Galaxy series?",
+    "gold_answers": [
+      "5"
+    ]
+  },
+  {
+    "question": "Which Simpsons characters were not born in Springfield?",
+    "gold_answers": [
+      "Q10381019",
+      "Q1789068",
+      "Q2704414",
+      "Q324430"
+    ]
+  },
+  {
+    "question": "When was sparkling water invented?",
+    "gold_answers": [
+      "1767-01-01T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Who is the tallest professional basketball player of all time?",
+    "gold_answers": [
+      "Q940503"
+    ]
+  },
+  {
+    "question": "What age is Justin Bieber?",
+    "gold_answers": [
+      "32"
+    ]
+  },
+  {
+    "question": "Is Justin Bieber alive?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "Is Justin Bieber dead?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "What age would Justin Bieber be if he were still alive?",
+    "gold_answers": [
+      "32"
+    ]
+  },
+  {
+    "question": "Is Michael Jackson the oldest child?",
+    "gold_answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "Which element precedes tin in the periodic table?",
+    "gold_answers": [
+      "Q1094"
+    ]
+  },
+  {
+    "question": "Which element has the lowest melting point?",
+    "gold_answers": [
+      "Q560"
+    ]
+  },
+  {
+    "question": "Which language is the official language of the most countries?",
+    "gold_answers": [
+      "Q1860"
+    ]
+  },
+  {
+    "question": "Which honorary mayors were not human?",
+    "gold_answers": [
+      "Q123904907",
+      "Q16844922",
+      "Q19810594",
+      "Q7627362"
+    ]
+  },
+  {
+    "question": "Which polygonal numbers are also pronic?",
+    "gold_answers": [
+      "Q1066089",
+      "Q1095904",
+      "Q1492447",
+      "Q19260207",
+      "Q23488",
+      "Q36977",
+      "Q3844595",
+      "Q42817",
+      "Q646181",
+      "Q667957",
+      "Q812996",
+      "Q851628"
+    ]
+  },
+  {
+    "question": "What's the next prime after 51?",
+    "gold_answers": [
+      "Q593011"
+    ]
+  },
+  {
+    "question": "What animal can hear the highest frequency?",
+    "gold_answers": [
+      "Q761648"
+    ]
+  },
+  {
+    "question": "Who has won more than one type of Nobel Prize?",
+    "gold_answers": [
+      "Q48983",
+      "Q7186"
+    ]
+  },
+  {
+    "question": "Which city has the most cathedrals?",
+    "gold_answers": [
+      "Q90"
+    ]
+  },
+  {
+    "question": "What make of car is a Corolla?",
+    "gold_answers": [
+      "Q10874595",
+      "Q53268"
+    ]
+  },
+  {
+    "question": "What is the tallest mountain in the Andes?",
+    "gold_answers": [
+      "Q39739"
+    ]
+  },
+  {
+    "question": "Which U.S. president had the most spouses?",
+    "gold_answers": [
+      "Q22686"
+    ]
+  },
+  {
+    "question": "When was the Rubik's cube invented?",
+    "gold_answers": [
+      "1974-05-19T00:00:00Z"
+    ]
+  },
+  {
+    "question": "Which conferences were organized by Turing Award winners?",
+    "gold_answers": [
+      "Q104243738",
+      "Q28053046",
+      "Q48026033",
+      "Q50355797",
+      "Q76721357",
+      "Q86968250"
+    ]
+  },
+  {
+    "question": "What video games are made by the developer of League of Legends?",
+    "gold_answers": [
+      "Q124635973",
+      "Q126480867",
+      "Q126481340",
+      "Q126481821",
+      "Q126482050",
+      "Q131438072",
+      "Q223341",
+      "Q2998270",
+      "Q3008213",
+      "Q67650639",
+      "Q72716423",
+      "Q75230763",
+      "Q86919275"
+    ]
+  },
+  {
+    "question": "Which writers speak French, Arabic and Japanese?",
+    "gold_answers": [
+      "Q107252323",
+      "Q16117958",
+      "Q170515",
+      "Q3057567",
+      "Q3124234",
+      "Q356719",
+      "Q472147",
+      "Q546374",
+      "Q55963"
+    ]
+  },
+  {
+    "question": "What whisky distilleries are based in Ireland?",
+    "gold_answers": [
+      "Q113799362",
+      "Q123154491",
+      "Q1867525",
+      "Q2482",
+      "Q28231971",
+      "Q28408323",
+      "Q28450922",
+      "Q3312688",
+      "Q502578",
+      "Q735484",
+      "Q85797673"
+    ]
+  },
+  {
+    "question": "How many regions of France are there?",
+    "gold_answers": [
+      "39"
+    ]
+  },
+  {
+    "question": "Which living people have an element named after them?",
+    "gold_answers": [
+      "Q1144326"
+    ]
+  },
+  {
+    "question": "Which Chilean companies have U.S. parent companies?",
+    "gold_answers": [
+      "Q1061176",
+      "Q132012721",
+      "Q16571026",
+      "Q3052066",
+      "Q4651363",
+      "Q5283104",
+      "Q55454561",
+      "Q55964511",
+      "Q69523460"
+    ]
+  },
+  {
+    "question": "Did Tarantino direct a movie last year?",
+    "gold_answers": [
+      "True"
+    ]
+  },
+  {
+    "question": "Which movie of the last ten years has won the most Academy Awards?",
+    "gold_answers": [
+      "Q20856802"
+    ]
+  },
+  {
+    "question": "Who was the winner of the latest Fields Medal?",
+    "gold_answers": [
+      "Q15461028",
+      "Q19655060",
+      "Q23721911",
+      "Q32538394"
+    ]
+  },
+  {
+    "question": "Who wrote The Old Man and the Sea?",
+    "gold_answers": [
+      "Q23434"
+    ]
+  },
+  {
+    "question": "Which YouTube channels talk about math?",
+    "gold_answers": [
+      "Q115556726",
+      "Q47490713",
+      "Q55100562",
+      "Q55345122",
+      "Q66565938"
+    ]
+  },
+  {
+    "question": "What diseases are associated with the gene FGF14?",
+    "gold_answers": [
+      "Q1519482",
+      "Q21097867",
+      "Q61335"
+    ]
+  },
+  {
+    "question": "What ultra-cool dwarfs have been found in the constellation Aquarius?",
+    "gold_answers": [
+      "Q23986556"
+    ]
+  },
+  {
+    "question": "Kim Deal played with which bands?",
+    "gold_answers": [
+      "Q1332134",
+      "Q188464",
+      "Q3100619"
+    ]
+  },
+  {
+    "question": "Who supervised the PhD of Alan Turing?",
+    "gold_answers": [
+      "Q92741"
+    ]
+  },
+  {
+    "question": "Which movies directed by Chloé Zhao are not MPAA-rated R?",
+    "gold_answers": [
+      "Q122741016",
+      "Q19057475",
+      "Q23894629"
+    ]
+  },
+  {
+    "question": "Who is the Hindu deity of knowledge?",
+    "gold_answers": [
+      "Q58838"
+    ]
+  },
+  {
+    "question": "Which science fiction movies star Uma Thurman?",
+    "gold_answers": [
+      "Q107896563",
+      "Q247516",
+      "Q276523",
+      "Q491800",
+      "Q494985"
+    ]
+  },
+  {
+    "question": "Which relational database management systems are open source?",
+    "gold_answers": [
+      "Q192490",
+      "Q19646047",
+      "Q261744",
+      "Q30100408",
+      "Q30100559",
+      "Q4778914",
+      "Q5627844",
+      "Q56375088",
+      "Q60463",
+      "Q669257",
+      "Q6898976",
+      "Q787177",
+      "Q7935239",
+      "Q8039438",
+      "Q850",
+      "Q97187861"
+    ]
+  }
+]

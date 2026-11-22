@@ -1,0 +1,11 @@
+[
+  {
+    "question": "On what date is Martin Luther King Jr. Day?",
+    "gold_answers": [ "Q14827163"]
+  }
+ ,{
+    "question": "How many children does Stephen Hawking have?",
+    "gold_answers": [ "3"]
+  }
+
+]
