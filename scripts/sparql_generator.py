@@ -103,7 +103,8 @@ def _build_prompt(
     few_shot: bool, 
     subgraph_hint: dict = None,
     property_candidates: list = None,
-    answer_type: list = None
+    answer_type: list = None,
+    other_entities: list = None
 ) -> str:
 
     entities_str = []
@@ -142,6 +143,11 @@ Linked entities:
             if t.get("prop"):
                 _p = "P31/wdt:P279*" if t["prop"] == "P31" else t["prop"]
                 context += f" [filter: ?x wdt:{_p} wd:{t['id']}]"
+    if other_entities:   # (8a)
+        context += ("\nOther entities that may be relevant (matched on phrases of the question). Use one ONLY if the "
+                    "question needs it, e.g. as a class or as a constraint; otherwise ignore it:")
+        for o in other_entities:
+            context += f"\n  - {o['phrase']} -> wd:{o['id']} ({o.get('label')}: {o.get('description') or 'no description'})"
     prompt_parts.append(context)
 
     
@@ -399,7 +405,8 @@ def generate_sparql(
     subgraph_hint: dict = None, 
     few_shot: bool = True,
     property_candidates: list = None,
-    answer_type: list = None
+    answer_type: list = None,
+    other_entities: list = None
 ) -> str:
     
     age_query = build_age_query(question, entity_links)
@@ -416,7 +423,8 @@ def generate_sparql(
         few_shot=few_shot, 
         subgraph_hint=subgraph_hint,
         property_candidates=property_candidates,
-        answer_type=answer_type
+        answer_type=answer_type,
+        other_entities=other_entities
     )
 
     raw_response = call_llm(prompt, system=SYSTEM_PROMPT, max_tokens=400)
@@ -508,7 +516,7 @@ def _common_class_qids(min_count: int = 2) -> set:
 COMMON_CLASSES = _common_class_qids()
 
 
-def allowed_qids(entity_links: dict, hint: dict = None, answer_type: list = None, top: int = 3) -> set:
+def allowed_qids(entity_links: dict, hint: dict = None, answer_type: list = None, top: int = 3, extra: list = None) -> set:
     ids = set(COMMON_CLASSES)
     for cands in (entity_links or {}).values():
         ids |= {c.get("id") for c in (cands or [])[:top] if c.get("id")}
@@ -516,6 +524,8 @@ def allowed_qids(entity_links: dict, hint: dict = None, answer_type: list = None
         ids.add(hint["qid"])
     for t in answer_type or []:
         ids.add(t["id"])
+    for o in extra or []:   # (8a)
+        ids.add(o["id"])
     return ids
 
 

@@ -10,7 +10,7 @@ TRAINING_DATA_PATH = os.getenv("TRAINING_DATA_PATH", "data/en_no_mentions_train.
 FEW_SHOT_K = int(os.getenv("FEW_SHOT_K", "3"))
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "http://localhost:11434/v1") 
 LLM_API_KEY = os.getenv("LLM_API_KEY", "ollama")
-LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5-coder:7b-instruct-q8_0")#llama3.1:8b-instruct-q8_0
+LLM_MODEL = os.getenv("LLM_MODEL", "qwen2.5-coder:14b")#llama3.1:8b-instruct-q8_0
 
 ENDPOINTS = {"endp1": "https://backend.wikikgqa.skynet.coypu.org",  # διαγωνισμός
     "endp2": "http://155.207.113.40:7001",

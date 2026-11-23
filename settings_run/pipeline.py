@@ -163,6 +163,11 @@ _TYPE_STOP = {"is", "are", "was", "were", "did", "do", "does", "has", "have", "h
 _WH_START = re.compile(r"^\s*(?:how\s+many|which|what)\s+(.+)$", re.IGNORECASE)
 
 
+_WH_START_7D = re.compile(r"^\s*(?:in\s+)?(?:how\s+many|which|what)\s+(.+)$", re.IGNORECASE)
+_WH_IS_7D = re.compile(r"^\s*(?:what|who)(?:'s|\s+is|\s+are|\s+was|\s+were)\s+the\s+(.+)$", re.IGNORECASE)
+_SUPERLATIVE_7D = re.compile(r"^(?:(?:\w+est|first|last|nearest|closest|most|least)\s+)+(?=\w)", re.IGNORECASE)
+
+
 def _term_variants(span: str) -> list:
    
     words = span.lower().split()
@@ -204,17 +209,25 @@ def _class_usage(qid: str):
 
 def _question_type_candidates(question: str, mentions: dict) -> list:
     
-    m = _WH_START.match(question or "")
-    if not m:
+    q = (question or "").strip()
+    rest, via_superlative = None, False
+    m2 = _WH_IS_7D.match(q)            # (7d) "What is the largest country ..." -> "country ..."
+    if m2 and _SUPERLATIVE_7D.match(m2.group(1)):
+        rest, via_superlative = _SUPERLATIVE_7D.sub("", m2.group(1), count=1), True
+    if rest is None:
+        m = _WH_START_7D.match(q)      # (7d) περιλαμβάνει και "In which ..."
+        rest = m.group(1) if m else None
+    if rest is None:
         return []
-    words = []
-    for w in re.findall(r"[A-Za-z0-9][\w'.-]*", m.group(1)):
+    words, cut = [], None
+    for w in re.findall(r"[A-Za-z0-9][\w'.-]*", rest):
         if w.lower() in _TYPE_STOP:
+            cut = w.lower()
             break
         words.append(w)
         if len(words) >= 3:
             break
-    if not words:
+    if not words or (via_superlative and len(words) == 1 and cut == "of"):   # "head of state" -> όχι "head"
         return []
     entity_texts = [e.lower() for e in mentions.get("entities", [])]
     n = len(words)
@@ -222,8 +235,7 @@ def _question_type_candidates(question: str, mentions: dict) -> list:
     best = None
     for i, j in spans[:6]:
         span = " ".join(words[i:j])
-        if any(span.lower() in e for e in entity_texts):
-            continue
+        # (7d) δεν αγνοούμε φράσεις μέσα σε entity mentions: το LLM εξάγει συχνά και την κλάση ως mention
         for term in _term_variants(span):
             try:
                 links = entity_linker.link_entities([term])
@@ -239,6 +251,91 @@ def _question_type_candidates(question: str, mentions: dict) -> list:
                     if use and (best is None or use[1] > best[0]):
                         best = (use[1], {"noun": span, "id": c["id"], "label": c.get("label"), "prop": use[0]})
     return [best[1]] if best else []
+
+
+# (8a) Υποψήφια entities από n-grams της ερώτησης -----------------------------------------------------------------
+USE_NGRAM_ENTITIES = os.getenv("USE_NGRAM_ENTITIES", "1") == "1"
+NGRAM_TOP_K = 1
+NGRAM_MAX_ENTITIES = 8
+_NG_STOP = set(_TYPE_STOP) | {"when", "where", "why", "how", "than", "as", "its", "it", "there", "this", "these", "those",
+                              "their", "his", "her", "many", "much", "more", "most", "any", "all", "one", "me", "us", "s",
+                              "if", "after", "before", "about", "into", "over", "under",
+                              "found", "focus", "made", "named", "born", "known", "based", "called", "located", "used",
+                              "given", "won", "win", "wrote", "written", "directed", "appear", "appeared", "star", "starred",
+                              "play", "played", "work", "worked"}
+_NG_CACHE: dict = {}
+
+
+def _norm_label(s: str) -> str:
+    return re.sub(r"[^a-z0-9 ]+", "", (s or "").lower().replace("-", " ")).strip()
+
+
+def _ngram_lookup(term: str) -> list:
+    """Ακριβές label (και alias) στο τοπικό index. Προτεραιότητα στις γνωστές κλάσεις των training queries. Top-NGRAM_TOP_K."""
+    if term in _NG_CACHE:
+        return _NG_CACHE[term]
+    found = []
+    try:
+        for c in entity_linker.search_wikidata(term, "item", 20):
+            if _norm_label(c.get("label")) == _norm_label(term) and c["id"] not in [f["id"] for f in found]:
+                found.append({"id": c["id"], "label": c.get("label"), "description": c.get("description")})
+    except Exception:
+        pass
+    try:
+        for c in entity_linker._alias_candidates(term):
+            if c.get("id") not in [f["id"] for f in found]:
+                found.append({"id": c["id"], "label": c.get("label"), "description": c.get("description")})
+    except Exception:
+        pass
+    common = [f for f in found if f["id"] in sparql_generator.COMMON_CLASSES]
+    out = (common or found)[:NGRAM_TOP_K]
+    _NG_CACHE[term] = out
+    return out
+
+
+def _ngram_candidates(question: str, entity_links: dict, mentions: dict, answer_type: list = None) -> list:
+    """Λίστα {"phrase","id","label","description"} για φράσεις της ερώτησης που δεν καλύπτονται από τα mentions (αλλαγή 8a)."""
+    if not USE_NGRAM_ENTITIES:
+        return []
+    seen = {c.get("id") for cands in (entity_links or {}).values() for c in (cands or [])[:3]}
+    seen |= {t.get("id") for t in (answer_type or [])}
+    ent_texts = [e.lower() for e in (mentions or {}).get("entities", [])]   # (8b)
+    toks = re.findall(r"[A-Za-z0-9][\w'.-]*", question or "")
+    phrases = []
+    for n in (3, 2, 1):
+        for i in range(0, len(toks) - n + 1):
+            seg = toks[i:i + n]
+            if seg[0].lower() in _NG_STOP or seg[-1].lower() in _NG_STOP:
+                continue
+            phrase = " ".join(seg)
+            pl = phrase.lower()
+            if any(pl != e and f" {pl} " in f" {e} " for e in ent_texts):   # (8b) γνήσιο υποσύνολο entity mention
+                continue
+            phrases.append(phrase)
+    out, matched = [], []
+    for ph in phrases:                                   # (8c) από τις μακρύτερες φράσεις προς τις μικρότερες
+        pl = ph.lower()
+        if any(f" {pl} " in f" {m} " for m in matched):   # περιέχεται σε φράση που ήδη βρήκε υποψήφιο
+            continue
+        variants = _term_variants(ph)
+        for term in variants[1:] + variants[:1]:         # ενικός πρώτα, μετά όπως γράφεται
+            raw = _ngram_lookup(term)
+            if not raw:
+                continue
+            matched.append(pl)
+            for c in raw:
+                if c["id"] not in seen:
+                    seen.add(c["id"])
+                    out.append({"phrase": ph, **c})
+            break
+        if len(out) >= NGRAM_MAX_ENTITIES:
+            break
+    out = out[:NGRAM_MAX_ENTITIES]
+    try:
+        out = entity_linker.add_descriptions(out) or out
+    except Exception:
+        pass
+    return out
 
 
 def answer_question(question: str,few_shot: bool = True,verbose: bool = True,use_subgraph: bool = True,resolve_labels: bool = False,) -> dict:
@@ -311,6 +408,13 @@ def answer_question(question: str,few_shot: bool = True,verbose: bool = True,use
             print(f"[answer_type] αποτυχία: {e}")
     if verbose and answer_type:
         print(f"[3/4] Answer type: {answer_type}")
+    other_entities = []
+    try:
+        other_entities = _ngram_candidates(question, entity_links, mentions, answer_type)   # (8a)
+    except Exception as e:
+        print(f"[ngram_entities] αποτυχία: {e}")
+    if verbose and other_entities:
+        print(f"[3/4] Other entities (n-grams): {[(o['phrase'], o['id']) for o in other_entities]}")
     sparql_query = sparql_generator.generate_sparql(
         question=question,
         entity_links=entity_links,
@@ -319,13 +423,14 @@ def answer_question(question: str,few_shot: bool = True,verbose: bool = True,use
         few_shot=few_shot,
         property_candidates=property_cands,
         answer_type=answer_type,
+        other_entities=other_entities,
     )
     method = "llm_subgraph_hybrid" if hint else ("llm_soft_hint" if property_cands else "llm")
     if "# age_template" in (sparql_query or ""):
         method = "age_template"
     elif "# alive_template" in (sparql_query or ""):
         method = "alive_template"
-    allowed_qids = sparql_generator.allowed_qids(entity_links, hint, answer_type)
+    allowed_qids = sparql_generator.allowed_qids(entity_links, hint, answer_type, extra=other_entities)
     sparql_query, qid_info = sparql_generator.enforce_known_qids(
         question, sparql_query, allowed_qids, entity_links, verbose=verbose)
 
@@ -437,6 +542,7 @@ def answer_question(question: str,few_shot: bool = True,verbose: bool = True,use
                    "llm_s": round(_lc.STATS["seconds"] - _s0, 1)},
         "qid_check": qid_info,
         "answer_type": answer_type,
+        "other_entities": other_entities,
         "fallback": fallback_used,
         "sparql": sparql_query,
         "results": results,
@@ -462,5 +568,6 @@ def diagnostics(result: dict) -> dict:
         "timing": result.get("timing"),
         "qid_check": result.get("qid_check"),
         "answer_type": result.get("answer_type"),
+        "other_entities": [[o.get("id"), o.get("label"), o.get("phrase")] for o in (result.get("other_entities") or [])],
         "fallback": result.get("fallback"),
     }

@@ -41,12 +41,12 @@ def summarize(rows):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--file", default="data/sample_questions.json",
+    ap.add_argument("--file", default="data/dev_6.json",
                     help="αρχείο ερωτήσεων (λίστα με question και gold_answers)")
     ap.add_argument("--endpoint", default=None,
                     help=f"{' / '.join(config.ENDPOINTS)} ή πλήρες URL (default: {config.ENDPOINT_NAME})")
     ap.add_argument("--limit", type=int, default=0, help="μόνο οι πρώτες N ερωτήσεις (0 = όλες)")
-    ap.add_argument("--tag", default="sample_1", help="όνομα αρχείου αποτελεσμάτων: results/run_<tag>.jsonl "
+    ap.add_argument("--tag", default="dev_6", help="όνομα αρχείου αποτελεσμάτων: results/run_<tag>.jsonl "
                                               "(default: το όνομα του αρχείου ερωτήσεων)")
     ap.add_argument("--resume", action="store_true", help="συνέχεια από το υπάρχον αρχείο αποτελεσμάτων")
     ap.add_argument("--quiet", action="store_true", help="μία γραμμή ανά ερώτηση αντί για αναλυτική έξοδο")
